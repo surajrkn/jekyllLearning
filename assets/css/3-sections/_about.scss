@@ -1,0 +1,124 @@
+$accent: #c99065;
+$accent-light : #e1c181;
+$bgColor : #e5eaee;
+h3 {
+  @extend .smallbold;
+  color: $accent-light;
+  text-align: center;
+  padding: 100px 0 30px;
+}
+.face-lockup {
+  max-width: 780px;
+  margin: 0 auto;
+  align-items: center;
+  @include justify-content(space-around);
+  @include display(flex);
+  .face-img {
+    @include size(200px);
+    background: url(/assets/img/face.jpg);
+    order: 3;
+    border-radius: 50%;
+  }
+  [class^="icon-"]{
+    @include size(100px);
+    background: $bgColor;
+    border-radius: 50%;
+
+    path {
+      fill: $accent;
+    }
+    &.icon-pencil {
+      order: 1;
+    }
+    &.icon-mouse {
+      order: 2;
+    }
+    &.icon-browser {
+      order: 4;
+    }
+    &.icon-video {
+      order: 5;
+    }
+  }
+}
+
+@media screen and (max-width:650px){
+  .face-lockup {
+    display: block;
+    text-align: center;
+
+    div {
+      display: inline-block;
+    }
+    .face-img {
+      display: block;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 200px;
+      margin: 0 auto 30px auto;
+    }
+
+    [class^="icon-"] {
+      margin: 10px;
+    }
+  }
+}
+
+.blurb {
+  max-width: 620px;
+  padding: 0 15px;
+  margin: 50px auto;
+  font-size: 24;
+  text-align: center;
+  font-weight: 300s;
+}
+
+.skill-lockup {
+  max-width: 700px;
+  margin: 100px auto;
+  color: #999;
+  @include clearfix;
+
+  .skill-unit {
+    width: 350px;
+    float: left;
+
+    .skill-icons {
+      font-size: 0;
+      margin: 0 0 30px;
+
+      span {
+        display: inline-block;
+        @include size(14px);
+        background-color: $accent;
+        margin-right: 5px;
+        border-radius: 50%;
+
+        &:after {
+          content: '';
+          display: block;
+          @include size(10px);
+          background: #ffffff;
+          border-radius: 50%;
+          margin: 2px;
+        }
+      }
+
+      @for $i from 1 through 10 {
+        &.skill-#{$i} span:nth-child(n+#{$i}){
+          @extend .skill-color;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:541px){
+  .skill-lockup {
+    width: 350px;
+  }
+}
+.skill-color {
+  background: $bgColor;
+}
+

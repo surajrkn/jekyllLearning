@@ -1,0 +1,71 @@
+//mixin
+@mixin size($size){
+  width: $size;
+  height: $size;
+}
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+@mixin display($value){
+  display: $value;
+}
+@mixin justify-content($value){
+  justify-content: $value;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+header {
+  height: 450px;
+  background: url(../img/coverImage.jpg) center center;
+  background-size: cover;
+  .logo {
+    @include size(50px);
+    background: #999;
+    float: left;
+    margin: 10px 0 0 30px;
+  }
+  nav {
+    float: right;
+    margin: 30px 30px 0 0;
+    a {
+      display: inline-block;
+      margin-left: 20px;
+      color: rgba(0,0,0,0.7);
+      @extend .smallbold;
+      &:hover {
+        color: rgba(0,0,0,1);
+      }
+    }
+  }
+  h1 {
+    font-size: 72px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 0.0;
+    text-align: center;
+    clear: both;
+    padding-top: 100px;
+    span {
+      display: inline-block;
+      padding: 0.2em 0.5em;
+      border: white solid 10px;
+    }
+  }
+  .kicker {
+    text-align: center;
+    @extend .smallbold;
+    letter-spacing: 0.5em;
+    color: #ffffff;
+  }
+}

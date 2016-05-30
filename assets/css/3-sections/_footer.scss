@@ -1,0 +1,30 @@
+footer {
+  background: url(../img/coverImage.jpg) center center;
+  background-size: cover;
+  .lockup {
+    padding: 50px 30px;
+    @include clearfix;
+    .logo {
+      @include size(50px);
+      float: left;
+      margin-right: 30px;
+    }
+    .content-wrap {
+      float: left;
+      .copyright {
+        margin: 0;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+    }
+    a {
+      @extend .smallbold;
+      color: rgba(0,0,0,0.5);
+      display: inline-block;
+      margin-right: 30px;
+      &:hover {
+        color: rgba(0,0,0,0.7);
+      }
+    }
+  }
+}

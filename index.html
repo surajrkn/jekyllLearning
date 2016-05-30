@@ -1,0 +1,24 @@
+---
+title: this is awesome
+description: this description is us
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+
+    <title></title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+    <link rel="stylesheet" href="assets/css/all.css">
+</head>
+<body>
+{% include header.html %}
+{% include about.html %}
+<p>hello this ia a test</p>
+{% include footer.html %}
+</body>
+</html>
